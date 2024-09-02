@@ -9,7 +9,7 @@ ARG VITE_SERVER_URL=${VITE_SERVER_URL:-http://0.0.0.0:8001}
 ARG VITE_API_BASE_URL=${VITE_API_BASE_URL:-http://0.0.0.0:8001}
 
 ######################################
-FROM arm64v8/node:${NODE_VERSION}-alpine
+FROM arm64v8/node:20.13.1-alpine
 
 ENV VITE_BYPASS_TUTORIAL=0 \
     NEXT_TELEMETRY_DISABLED=1
