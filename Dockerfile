@@ -15,7 +15,7 @@ ENV VITE_BYPASS_TUTORIAL=0 \
     NEXT_TELEMETRY_DISABLED=1
 
 ######################################
-FROM base as build
+FROM base AS build
 
 ARG GIT_TAG \
     VITE_BYPASS_LOGIN \
@@ -35,7 +35,7 @@ RUN sed -i 's|export const apiUrl = .*|export const apiUrl = isLocal ? serverUrl
 RUN NODE_OPTIONS=--max-old-space-size=8192 node /usr/local/bin/npm run build
 
 ######################################
-FROM base as app
+FROM base AS app
 
 ENV NODE_ENV=production \
     PORT=${PORT:-8000}
